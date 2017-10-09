@@ -302,16 +302,17 @@ public class NextLevelPhotoConfiguration : NextLevelConfiguration {
     /// Provides an AVFoundation friendly dictionary dictionary for configuration output.
     ///
     /// - Returns: Configuration dictionary for AVFoundation
-    public func avcaptureDictionary(photoSettings: AVCapturePhotoSettings = AVCapturePhotoSettings()) -> [String: Any]? {
+    public func avcaptureDictionary() -> [String: Any]? {
         if let options = self.options {
             return options
         } else {
             var config: [String: Any] = [AVVideoCodecKey: self.codec]
             if self.generateThumbnail {
+                let settings = AVCapturePhotoSettings()
                 // iOS 11 GM fix
                 // https://forums.developer.apple.com/thread/86810
-                if photoSettings.__availablePreviewPhotoPixelFormatTypes.count > 0 {
-                    if let formatType = photoSettings.__availablePreviewPhotoPixelFormatTypes.first {
+                if settings.__availablePreviewPhotoPixelFormatTypes.count > 0 {
+                    if let formatType = settings.__availablePreviewPhotoPixelFormatTypes.first {
                         config[kCVPixelBufferPixelFormatTypeKey as String] = formatType
                     }
                 }

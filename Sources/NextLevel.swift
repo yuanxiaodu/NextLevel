@@ -2397,6 +2397,13 @@ extension NextLevel {
         }
     }
     
+    /// Triggers a photo capture with photoSettings.
+    public func capturePhoto(photoSettings: AVCapturePhotoSettings) {
+        if let photoOutput = self._photoOutput, let _ = photoOutput.connection(with: AVMediaType.video) {
+            photoOutput.capturePhoto(with: photoSettings, delegate: self)
+        }
+    }
+    
     /// Get capture device active format
     public var activeFormat: AVCaptureDevice.Format? {
         get {
