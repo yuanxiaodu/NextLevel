@@ -2764,7 +2764,7 @@ extension NextLevel: AVCapturePhotoCaptureDelegate {
             //}
             
             self.executeClosureAsyncOnMainQueueIfNecessary {
-                self.photoDelegate?.nextLevel(self, didProcessPhotoCaptureWith: photoDict, photoConfiguration: self.photoConfiguration)
+                self.photoDelegate?.nextLevel(self, didProcessRawPhotoCaptureWith: photoDict, photoConfiguration: self.photoConfiguration)
             }
         }
     }
