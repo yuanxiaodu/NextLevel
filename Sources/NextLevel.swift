@@ -2397,6 +2397,16 @@ extension NextLevel {
         }
     }
     
+    /// Get capture device active format
+    public var activeFormat: AVCaptureDevice.Format? {
+        get {
+            if let device = self._currentDevice {
+                return device.activeFormat
+            } else {
+                return nil
+            }
+        }
+    }
 }
 
 // MARK: - NextLevelSession and sample buffer processing
