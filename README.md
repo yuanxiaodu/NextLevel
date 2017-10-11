@@ -1,3 +1,8 @@
+Add some functions to NextLevel photo capture.
+1. Get var activeFormat of current device.
+2. add func capturePhoto(photoSettings: AVCapturePhotoSettings).
+3. add func updatePreviewLayer(duration: CMTime, iso ISO: Float, completionHandler handler: ((CMTime) -> Void)!)
+
 <p><img src="https://raw.github.com/NextLevel/NextLevel/master/NextLevel%402x.png" alt="Next Level" style="max-width:100%;"></p>
 
 Next Level is a media capture camera library for iOS written in [Swift](https://developer.apple.com/swift/).
