@@ -2414,6 +2414,15 @@ extension NextLevel {
             }
         }
     }
+    
+    /// Set exposure.
+    public func setExposure(duration: CMTime, iso ISO: Float, completionHandler handler: ((CMTime) -> Void)!){
+        if let device = self._currentDevice {
+            try! device.lockForConfiguration()
+            device.setExposureModeCustom(duration: duration, iso: ISO, completionHandler: handler)
+            device.unlockForConfiguration()
+        }
+    }
 }
 
 // MARK: - NextLevelSession and sample buffer processing
