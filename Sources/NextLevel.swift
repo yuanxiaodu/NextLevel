@@ -2415,8 +2415,8 @@ extension NextLevel {
         }
     }
     
-    /// Set exposure.
-    public func setExposure(duration: CMTime, iso ISO: Float, completionHandler handler: ((CMTime) -> Void)!){
+    /// update previewLayer with exposure duration and ISO.
+    public func updatePreviewLayer(duration: CMTime, iso ISO: Float, completionHandler handler: ((CMTime) -> Void)!){
         if let device = self._currentDevice {
             try! device.lockForConfiguration()
             device.setExposureModeCustom(duration: duration, iso: ISO, completionHandler: handler)
